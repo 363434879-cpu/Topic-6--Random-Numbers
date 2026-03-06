@@ -65,10 +65,78 @@
             //    Changing the seed changes the sequence.
             //    Removing the seed returns true randomness (as random as software allows).
 
+            //TASK 1: RANDOM NUMBERS
 
+            Random generator2 = new Random();
+
+            Console.Write("Enter the minimum value: ");
+            int min = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the maximum value: ");
+            int max = Convert.ToInt32(Console.ReadLine());
+
+            // Generate random number (inclusive range)
+            int randomNumber = generator2.Next(min, max + 1);
+
+            Console.WriteLine("Your random number is: " + randomNumber);
+
+            Console.ReadLine();
+
+            // TASK 3: ROLL THE DICE 
+
+            Random generator3 = new Random();
+
+            // Roll two dice (numbers from 1 to 6)
+            int dice1 = generator3.Next(1, 7);
+            int dice2 = generator3.Next(1, 7);
+
+            // Calculate the sum
+            int sum = dice1 + dice2;
+
+            // Display results
+            Console.WriteLine("Dice 1: " + dice1);
+            Console.WriteLine("Dice 2: " + dice2);
+            Console.WriteLine("Sum: " + sum);
+
+            Console.ReadLine(); // Keeps program open
+
+            //TASK 4: MAGIC 8 BALL
+
+            Random generator4 = new Random();
+
+            Console.WriteLine("Welcome to the future-seer 3000. Please ask your yes/no question:");
+            Console.Write("> ");
+            string question = Console.ReadLine();
+
+            Console.WriteLine("Thinking...");
+            Thread.Sleep(1500); // 1.5 second delay
+
+            int response = generator4.Next(1, 6);
+
+            if (response == 1)
+            {
+                Console.WriteLine("Yes, definitely!");
+            }
+            else if (response == 2)
+            {
+                Console.WriteLine("Ask again later.");
+            }
+            else if (response == 3)
+            {
+                Console.WriteLine("No way!");
+            }
+            else if (response == 4)
+            {
+                Console.WriteLine("It is very likely.");
+            }
+            else if (response == 5)
+            {
+                Console.WriteLine("I don't think so.");
+            }
+
+            Console.ReadLine();
 
 
         }
-
     }
 }
